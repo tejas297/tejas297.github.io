@@ -1,180 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.className+=' js'</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Tejas Chauhan · Backend Software Engineer</title>
 <meta name="description" content="Backend engineer building payment systems, data pipelines and AI services. Based in Vadodara, India.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#eef3fc;--surface:#dde7f9;--text:#0a1433;--muted:#4a5f8f;--line:#bccbea;--accent:#1c3fae;--accent2:#1d5fc4;--chip:#cfdcf7;color-scheme:light;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#050b1f;--surface:#0c1a3d;--text:#eaf1ff;--muted:#8fa6d6;--line:#1d3270;--accent:#4f7dff;--accent2:#8fb8ff;--chip:#12275c;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#050b1f;--surface:#0c1a3d;--text:#eaf1ff;--muted:#8fa6d6;--line:#1d3270;--accent:#4f7dff;--accent2:#8fb8ff;--chip:#12275c;color-scheme:dark}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+:root{--bg:#fbfbfd;--bg2:#eef2fa;--card:#fff;--text:#0b1230;--muted:#5b688a;--line:#d6ddee;--accent:#1c4fd8;--link:#0b5bd3;--chip:#dbe6ff;--g1:#1c4fd8;--g2:#5a8bff;--navbg:rgba(251,251,253,.8);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000510;--bg2:#070f2b;--card:#0d1840;--text:#f5f7ff;--muted:#93a3cf;--line:#1b2a5e;--accent:#4f7dff;--link:#7fb0ff;--chip:#16296b;--g1:#7fb0ff;--g2:#4f7dff;--navbg:rgba(0,5,16,.75);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#000510;--bg2:#070f2b;--card:#0d1840;--text:#f5f7ff;--muted:#93a3cf;--line:#1b2a5e;--accent:#4f7dff;--link:#7fb0ff;--chip:#16296b;--g1:#7fb0ff;--g2:#4f7dff;--navbg:rgba(0,5,16,.75);color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px);scroll-behavior:smooth}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Outfit,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.6}
-h1,h2,h3{font-family:"Chakra Petch","Arial Narrow",Impact,sans-serif;text-transform:uppercase;line-height:1.05;margin:0}
-a{color:var(--accent2)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",sans-serif;font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--navbg);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px)}
+h1,h2,h3{margin:0;letter-spacing:-.03em;line-height:1.05;font-weight:700}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.wrap{max-width:900px;margin:0 auto;padding:0 24px}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:15px}
-nav .links{display:flex;gap:20px;flex-wrap:wrap}
-nav a{color:var(--muted);text-decoration:none}nav a:hover{color:var(--text)}
-#theme{background:none;border:1px solid var(--line);color:var(--text);border-radius:999px;padding:4px 12px;font:inherit;font-size:14px;cursor:pointer}
-.hero{padding:72px 0 56px}
-.hero p.role{color:var(--muted);margin:0 0 12px;letter-spacing:.04em}
-.hero h1{font-size:clamp(56px,14vw,128px);letter-spacing:.01em}
-.hero .tag{font-size:clamp(20px,3vw,26px);max-width:620px;margin:28px 0;font-weight:300}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{padding:11px 22px;border-radius:8px;border:1px solid var(--accent);color:var(--text);text-decoration:none;font-weight:500}
-.btn.main{background:var(--accent);color:var(--bg)}
-section{padding:64px 0;border-top:1px solid var(--line)}
-h2{font-size:clamp(30px,5vw,44px);margin-bottom:28px}
-h3{font-size:22px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px}
-.grid p{margin:6px 0 0;color:var(--muted)}
-.job{padding:0 0 32px}
-.job .when{color:var(--muted);font-size:15px;margin:0 0 4px}
-.job h3 span{display:block;font-family:Outfit,sans-serif;font-size:17px;font-weight:500;color:var(--accent2);text-transform:none;margin-top:6px}
-ul{padding-left:20px;margin:12px 0 0}li{margin:6px 0}
-.proj{padding:36px 0;border-top:1px solid var(--line)}
-.proj:first-of-type{border-top:0;padding-top:0}
-.proj h3{font-size:clamp(22px,4vw,30px)}
-.proj .stack{color:var(--muted);margin:10px 0 18px;font-size:15px}
-.flow{display:flex;flex-direction:column;gap:0;max-width:440px;margin:18px 0}
-.flow div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 16px;text-align:center;position:relative;font-weight:500}
-.flow div small{display:block;color:var(--muted);font-weight:300;font-size:14px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;height:48px;background:var(--navbg);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav{height:48px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:13px}
+.brand{font-weight:600;color:var(--text)}
+.links{display:flex;gap:22px}.links a{color:var(--muted)}.links a:hover,.links a.active{color:var(--text);text-decoration:none}
+#theme{background:none;border:1px solid var(--line);color:var(--text);border-radius:999px;padding:3px 12px;font:inherit;cursor:pointer}
+.hero{text-align:center;padding:clamp(80px,16vw,170px) 0 clamp(70px,12vw,130px)}
+.hero .eyebrow{color:var(--muted);font-size:clamp(17px,2.4vw,21px);font-weight:600;margin:0 0 14px}
+.hero h1{font-size:clamp(52px,11vw,120px);background:linear-gradient(100deg,var(--g1),var(--g2) 55%,var(--g1));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
+.hero .tag{font-size:clamp(20px,3vw,30px);color:var(--muted);max-width:640px;margin:26px auto 34px;font-weight:500;letter-spacing:-.01em}
+.btns{display:flex;gap:22px;justify-content:center;align-items:center;flex-wrap:wrap}
+.pill{background:var(--accent);color:#fff;padding:12px 26px;border-radius:999px;font-weight:500;font-size:17px}
+.pill:hover{text-decoration:none;filter:brightness(1.1)}
+.more{font-size:19px}
+section{padding:clamp(72px,11vw,130px) 0}.alt{background:var(--bg2)}
+h2{font-size:clamp(36px,6vw,64px);text-align:center;margin-bottom:14px}
+.sub{text-align:center;color:var(--muted);font-size:clamp(18px,2.4vw,24px);max-width:620px;margin:0 auto 56px}
+#stmt{font-size:clamp(28px,5.2vw,58px);font-weight:700;letter-spacing:-.03em;line-height:1.14;max-width:900px;margin:0 auto}
+.bento{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:64px}
+.tile{background:var(--card);border-radius:28px;padding:clamp(28px,4vw,44px);border:1px solid var(--line)}
+.tile h3{font-size:clamp(24px,3vw,32px);margin-bottom:10px}
+.tile p{margin:0;color:var(--muted);font-size:19px}
+.tile.wide{grid-column:1/-1;background:linear-gradient(135deg,var(--accent),#0b2a8f);color:#fff;border:0}
+.tile.wide p{color:rgba(255,255,255,.82)}
+.tile .when{color:var(--muted);font-size:15px;font-weight:600;margin-bottom:8px}
+.tile h3 small{display:block;font-size:18px;font-weight:500;color:var(--link);letter-spacing:0;margin-top:6px}
+ul{padding-left:20px;margin:16px 0 0;color:var(--muted)}li{margin:7px 0}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:32px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,56px);align-items:center;margin-top:24px}
+.proj h3{font-size:clamp(28px,4vw,44px)}
+.stack{color:var(--muted);font-size:15px;margin:14px 0 0}
+.repo{display:inline-block;margin-top:18px;font-size:17px}
+.flow{display:flex;flex-direction:column;background:var(--bg2);border-radius:22px;padding:26px}
+.flow div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;text-align:center;position:relative;font-weight:600;font-size:16px}
+.flow div small{display:block;color:var(--muted);font-weight:400;font-size:13px}
 .flow div.hl{background:var(--chip);border-color:var(--accent)}
-.flow div+div{margin-top:18px}
-.flow div+div::before{content:"";position:absolute;left:50%;top:-18px;height:18px;border-left:2px solid var(--line)}
-.flow.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:none}
+.flow div+div{margin-top:16px}
+.flow div+div::before{content:"";position:absolute;left:50%;top:-16px;height:16px;border-left:2px solid var(--accent);opacity:.5}
+.flow.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .flow.split div+div{margin-top:0}.flow.split div+div::before{display:none}
 .flow .full{grid-column:1/-1}
-.repo{display:inline-block;margin-top:8px}
-.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
-.chips h3{font-size:16px;color:var(--muted);margin-bottom:6px}
-.chips p{margin:0}
-footer{padding:48px 0 64px;border-top:1px solid var(--line);color:var(--muted)}
-footer a{margin-right:18px}
-@media (max-width:560px){.flow.split{grid-template-columns:1fr}}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.tools .tile{padding:30px}
+.tools h3{font-size:15px;color:var(--muted);font-weight:600;letter-spacing:0;margin-bottom:8px}
+.tools p{color:var(--text);font-size:22px;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.creds{text-align:center;color:var(--muted);margin:40px 0 0;padding:0;list-style:none}
+#contact{text-align:center}
+#contact h2{margin-bottom:24px}
+#contact .mail{font-size:clamp(22px,4vw,36px);font-weight:600;letter-spacing:-.02em}
+#contact .row{margin-top:20px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+footer{padding:28px 0 40px;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line)}
+@media (max-width:760px){.proj,.edu,.bento{grid-template-columns:1fr}.links{gap:14px}.brand{display:none}nav{justify-content:space-between}.flow.split{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:no-preference){
+body{overflow-x:hidden}
+.hero{position:relative}
+.hero::before{content:"";position:absolute;z-index:-1;pointer-events:none;left:50%;top:10%;width:min(760px,100vw);height:520px;margin-left:calc(min(760px,100vw)/-2);background:radial-gradient(circle,var(--accent),transparent 65%);opacity:.22;filter:blur(50px);animation:drift 14s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(40px,30px) scale(1.12)}}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.96)}}
+@keyframes grow{from{transform:scaleY(0)}}
+.js .hero .wrap>*{animation:rise 1.1s cubic-bezier(.2,.7,.2,1) backwards}
+.js .hero .wrap>:nth-child(2){animation-delay:.12s}.js .hero .wrap>:nth-child(3){animation-delay:.3s}.js .hero .wrap>:nth-child(4){animation-delay:.5s}
+.js .rv{opacity:0;transform:translateY(40px) scale(.98);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.js .flow:not(.in) div,.js .flow:not(.in) div+div::before{opacity:0}
+.flow.in div{animation:pop .6s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i)*.18s + .2s)}
+.flow.in div+div::before{transform-origin:top;animation:grow .35s ease backwards;animation-delay:calc(var(--i)*.18s + .05s)}
+.flow div{transition:transform .25s ease,border-color .25s,box-shadow .25s}
+.flow div:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 10px 26px -14px var(--accent)}
+.pill{transition:transform .25s,filter .25s}.pill:hover{transform:scale(1.04)}
+.tt *{transition:background-color .6s ease,color .6s ease,border-color .6s ease!important}
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-<nav>
+<header><div class="wrap"><nav>
+  <a class="brand" href="#top">Tejas Chauhan</a>
   <div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#toolbox">Toolbox</a><a href="#contact">Contact</a></div>
   <button id="theme" type="button" aria-label="Switch colour theme">Theme</button>
-</nav>
+</nav></div></header>
 
-<header class="hero">
-  <p class="role">Software engineer · Vadodara, India</p>
-  <h1>Tejas<br>Chauhan</h1>
+<main id="top">
+<div class="hero"><div class="wrap">
+  <p class="eyebrow">Backend software engineer · Vadodara, India</p>
+  <h1>Tejas Chauhan</h1>
   <p class="tag">Building reliable backend systems: payments, data pipelines, and AI services.</p>
-  <div class="btns">
-    <a class="btn main" href="#projects">See my projects</a>
-    <a class="btn" href="mailto:chauhantejas18@gmail.com">Email me</a>
-  </div>
-</header>
+  <div class="btns"><a class="pill" href="#projects">See my projects</a><a class="more" href="mailto:chauhantejas18@gmail.com">Get in touch ›</a></div>
+</div></div>
 
-<section id="about">
-  <h2>From payment switches to AI-driven backends</h2>
-  <p style="max-width:640px;margin-top:0">Production experience in ISO 8583 payment switching (Java) and a low-latency Go gateway, plus Airflow data pipelines, now building RAG systems with LangChain and pgvector.</p>
-  <div class="grid" style="margin-top:32px">
-    <div><h3>Payment systems</h3><p>ISO 8583 payment switching in Java. A low-latency Go gateway.</p></div>
-    <div><h3>Data pipelines</h3><p>Airflow data pipelines.</p></div>
-    <div><h3>AI-driven backends</h3><p>RAG systems with LangChain and pgvector.</p></div>
-    <div><h3>Distributed patterns</h3><p>Saga, CQRS, event-driven architecture. Reliable, observable services on AWS.</p></div>
+<section id="about" class="alt"><div class="wrap">
+  <p id="stmt">Production experience in ISO 8583 payment switching and a low-latency Go gateway, plus Airflow data pipelines. Now building RAG systems with LangChain and pgvector.</p>
+  <div class="bento">
+    <div class="tile wide"><h3>Payment systems</h3><p>ISO 8583 payment switching in Java, and a low-latency Go gateway.</p></div>
+    <div class="tile"><h3>Data pipelines</h3><p>Airflow and Python ETL pipelines with monitoring and error handling.</p></div>
+    <div class="tile"><h3>AI-driven backends</h3><p>RAG systems with LangChain and pgvector.</p></div>
+    <div class="tile wide"><h3>Distributed patterns</h3><p>Saga, CQRS, event-driven architecture. Reliable, observable services on AWS.</p></div>
   </div>
-</section>
+</div></section>
 
-<section id="experience">
-  <h2>Where I’ve shipped</h2>
-  <div class="job">
-    <p class="when">Oct 2025 – present</p>
-    <h3>Software Engineer<span>Tntra Ecosystem AI-First</span></h3>
-    <ul>
-      <li>Built a Go ISO 8583 TCP gateway with persistent connections, pooling, and concurrency control.</li>
-      <li>Contributed to a Java/Spring ISO 8583 payment switch: message pipelines and adapters.</li>
-      <li>Debugged transaction flows; added Prometheus metrics, structured logging, and unit tests.</li>
-    </ul>
+<section id="experience"><div class="wrap">
+  <h2>Where I’ve shipped.</h2>
+  <p class="sub">Payments and data engineering, in production.</p>
+  <div class="edu" style="grid-template-columns:1fr 1fr">
+    <div class="tile"><div class="when">Oct 2025 – present</div><h3>Software Engineer<small>Tntra Ecosystem AI-First</small></h3>
+      <ul><li>Built a Go ISO 8583 TCP gateway with persistent connections, pooling, and concurrency control.</li><li>Contributed to a Java/Spring ISO 8583 payment switch: message pipelines and adapters.</li><li>Debugged transaction flows; added Prometheus metrics, structured logging, and unit tests.</li></ul></div>
+    <div class="tile"><div class="when">Jan – May 2025</div><h3>Data Engineer Intern<small>InfoDesk</small></h3>
+      <ul><li>Designed and deployed Airflow and Python ETL pipelines.</li><li>Improved monitoring and error handling; built Python ingestion APIs.</li></ul></div>
   </div>
-  <div class="job">
-    <p class="when">Jan – May 2025</p>
-    <h3>Data Engineer Intern<span>InfoDesk</span></h3>
-    <ul>
-      <li>Designed and deployed Airflow and Python ETL pipelines.</li>
-      <li>Improved monitoring and error handling; built Python ingestion APIs.</li>
-    </ul>
-  </div>
-</section>
+</div></section>
 
-<section id="projects">
-  <h2>Selected projects</h2>
-  <p style="margin-top:-8px;color:var(--muted)">Four backend-first builds, each with an architecture diagram.</p>
+<section id="projects" class="alt"><div class="wrap">
+  <h2>Selected projects.</h2>
+  <p class="sub">Four backend-first builds, each with its architecture.</p>
   <div id="projList"></div>
-</section>
+</div></section>
 
-<section id="toolbox">
-  <h2>Toolbox</h2>
-  <div class="chips">
-    <div><h3>Languages</h3><p>Java, Python, Go</p></div>
-    <div><h3>Frameworks</h3><p>Spring (Integration, Security), Gin, FastAPI</p></div>
-    <div><h3>Cloud and infra</h3><p>AWS, Docker, GitHub Actions, microservices</p></div>
-    <div><h3>Data</h3><p>MongoDB, MySQL, PostgreSQL, OpenSearch</p></div>
-    <div><h3>Tooling</h3><p>Airflow, Temporal, Ansible, Tomcat</p></div>
-    <div><h3>Testing</h3><p>JUnit, Pytest</p></div>
+<section id="toolbox"><div class="wrap">
+  <h2>Toolbox.</h2>
+  <p class="sub">What I reach for.</p>
+  <div class="tools">
+    <div class="tile"><h3>Languages</h3><p>Java, Python, Go</p></div>
+    <div class="tile"><h3>Frameworks</h3><p>Spring (Integration, Security), Gin, FastAPI</p></div>
+    <div class="tile"><h3>Cloud and infra</h3><p>AWS, Docker, GitHub Actions, microservices</p></div>
+    <div class="tile"><h3>Data</h3><p>MongoDB, MySQL, PostgreSQL, OpenSearch</p></div>
+    <div class="tile"><h3>Tooling</h3><p>Airflow, Temporal, Ansible, Tomcat</p></div>
+    <div class="tile"><h3>Testing</h3><p>JUnit, Pytest</p></div>
   </div>
-</section>
+</div></section>
 
-<section id="education">
-  <h2>Education and credentials</h2>
-  <div class="grid">
-    <div><h3>MCA</h3><p>Nirma University, Ahmedabad<br>2023–2025</p></div>
-    <div><h3>BCA</h3><p>The Maharaja Sayajirao University of Baroda<br>2019–2022</p></div>
+<section id="education" class="alt"><div class="wrap">
+  <h2>Education and credentials.</h2>
+  <p class="sub"></p>
+  <div class="edu">
+    <div class="tile"><div class="when">2023–2025</div><h3>MCA</h3><p>Nirma University, Ahmedabad</p></div>
+    <div class="tile"><div class="when">2019–2022</div><h3>BCA</h3><p>The Maharaja Sayajirao University of Baroda</p></div>
   </div>
-  <ul style="margin-top:28px">
-    <li>AWS Academy Graduate, Cloud Foundations (2022)</li>
-    <li>AWS Certified Developer – Associate (in progress)</li>
-    <li>Volunteer, Art of Living Foundation: Happiness Program graduate</li>
-  </ul>
-</section>
+  <ul class="creds"><li>AWS Academy Graduate, Cloud Foundations (2022)</li><li>AWS Certified Developer – Associate (in progress)</li><li>Volunteer, Art of Living Foundation: Happiness Program graduate</li></ul>
+</div></section>
 
-<footer id="contact">
-  <h2>Get in touch</h2>
-  <p><a href="mailto:chauhantejas18@gmail.com">chauhantejas18@gmail.com</a> · <a href="tel:+917490857974" style="margin:0">+91 7490857974</a></p>
-  <p><a href="https://github.com/tejas297" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/tejas-chauhan-225b5b186" rel="noopener">LinkedIn</a></p>
-</footer>
-</div>
+<section id="contact"><div class="wrap">
+  <h2>Let’s talk.</h2>
+  <a class="mail" href="mailto:chauhantejas18@gmail.com">chauhantejas18@gmail.com</a>
+  <div class="row"><a href="tel:+917490857974">+91 7490857974</a><a href="https://github.com/tejas297" rel="noopener">GitHub ›</a><a href="https://www.linkedin.com/in/tejas-chauhan-225b5b186" rel="noopener">LinkedIn ›</a></div>
+</div></section>
+</main>
+<footer>© 2026 Tejas Chauhan · Vadodara, India</footer>
 
 <script>
-// Edit the repo field of each project to its GitHub URL.
+// Put each project's GitHub URL in its repo field.
 var projects=[
-{t:"A Go gateway that keeps payment connections alive",s:"Go, moov-io ISO 8583, TCP, Prometheus, Zerolog, Cleanenv, Testify",
+{t:"A Go gateway that keeps payment connections alive.",s:"Go, moov-io ISO 8583, TCP, Prometheus, Zerolog, Cleanenv, Testify",
  flow:[["Client TCP connections"],["Connection pool","Persistent connections · concurrency control",1],["ISO 8583 pipeline","Raw TCP payloads → structured messages"],["Upstream"]],
  b:["Persistent connections, pooling, concurrency control, graceful shutdown.","Pipeline turning raw TCP payloads into structured ISO 8583 messages.","Prometheus metrics and structured logging."],repo:""},
-{t:"A Java switch that routes card transactions securely",s:"Java 21, Spring Boot, Spring Integration, jPOS, TCP, Maven, JUnit",
+{t:"A Java switch that routes card transactions securely.",s:"Java 21, Spring Boot, Spring Integration, jPOS, TCP, Maven, JUnit",
  flow:[["Inbound adapter","Spring Integration TCP"],["Message pipeline","ISO 8583 payment switching",1],["Outbound adapter","Spring Integration TCP"]],
  b:["Inbound and outbound adapters and message pipelines over Spring Integration TCP.","Debugged transaction flows and optimized pipelines for reliability.","Unit tests for adapters."],repo:""},
-{t:"An HR assistant grounded in company documents",s:"Python, LangChain, OpenAI API, FastAPI, pgvector, PyMuPDF, SQLAlchemy",
+{t:"An HR assistant grounded in company documents.",s:"Python, LangChain, OpenAI API, FastAPI, pgvector, PyMuPDF, SQLAlchemy",
  flow:[["HR documents"],["Embeddings in pgvector","",1],["Retrieval","Multi-turn queries · prompt templates"],["LLM answer","Policies · leave · benefits"]],
  b:["Natural-language answers on policies, leave, and benefits.","RAG over HR documents to reduce hallucinations.","Prompt templates and flow for multi-turn queries."],repo:""},
-{t:"A cloud-native microservices platform on AWS",s:"Java 21, Spring Boot, Spring Security, gRPC, Kafka (AWS MSK), PostgreSQL, ECS Fargate, AWS CDK",
+{t:"A cloud-native microservices platform on AWS.",s:"Java 21, Spring Boot, Spring Security, gRPC, Kafka (AWS MSK), PostgreSQL, ECS Fargate, AWS CDK",
  flow:[["Spring Cloud Gateway","",1,"full"],["Patient · Billing · Authentication · Analytics","Services on ECS Fargate, gRPC for synchronous calls",0,"full"],["Kafka (AWS MSK)","Event-driven processing",1],["PostgreSQL","",1]],split:1,
  b:["Patient, Billing, Authentication, and Analytics services.","gRPC for sync calls, Kafka for event-driven processing.","JWT auth service and Spring Cloud Gateway routing.","Infrastructure provisioned with CDK."],repo:""}
 ];
-var out=projects.map(function(p){
- var f=p.flow.map(function(n){return '<div class="'+(n[2]?'hl ':'')+(n[3]||'')+'">'+n[0]+(n[1]?'<small>'+n[1]+'</small>':'')+'</div>'}).join('');
- var link=p.repo?'<a class="repo" href="'+p.repo+'" rel="noopener">View repository</a>':'<a class="repo" href="https://github.com/tejas297" rel="noopener">More on GitHub</a>';
- return '<article class="proj"><h3>'+p.t+'</h3><p class="stack">'+p.s+'</p><div class="flow'+(p.split?' split':'')+'">'+f+'</div><ul>'+p.b.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>'+link+'</article>';
+document.getElementById('projList').innerHTML=projects.map(function(p){
+ var f=p.flow.map(function(n,i){return '<div style="--i:'+i+'" class="'+(n[2]?'hl ':'')+(n[3]||'')+'">'+n[0]+(n[1]?'<small>'+n[1]+'</small>':'')+'</div>'}).join('');
+ var link='<a class="repo" href="'+(p.repo||'https://github.com/tejas297')+'" rel="noopener">'+(p.repo?'View on GitHub ›':'More on GitHub ›')+'</a>';
+ return '<article class="proj"><div><h3>'+p.t+'</h3><p class="stack">'+p.s+'</p><ul>'+p.b.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>'+link+'</div><div class="flow'+(p.split?' split':'')+'">'+f+'</div></article>';
 }).join('');
-document.getElementById('projList').innerHTML=out;
+
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('section h2,.sub,.tile,.proj,.creds,#contact .mail,#contact .row,.flow').forEach(function(el){
+ if(!el.classList.contains('flow')){el.classList.add('rv');el.style.setProperty('--d',Math.min(Array.prototype.indexOf.call(el.parentNode.children,el),4)*.1+'s')}
+ io.observe(el)});
+
+var st=document.getElementById('stmt');
+st.innerHTML=st.textContent.split(' ').map(function(w){return '<span>'+w+'</span>'}).join(' ');
+var ws=st.children;
+function upd(){var r=st.getBoundingClientRect(),h=innerHeight,p=Math.min(1,Math.max(0,(h*.85-r.top)/(r.height+h*.35)));
+ for(var i=0;i<ws.length;i++)ws[i].style.opacity=.2+.8*Math.min(1,Math.max(0,p*ws.length*1.15-i))}
+if(!rm){addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd()}
+
+var links={};document.querySelectorAll('.links a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
+var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){for(var k in links)links[k].classList.toggle('active',k===e.target.id)}})},{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('main section[id]').forEach(function(s){so.observe(s)});
+
 var root=document.documentElement;
 document.getElementById('theme').onclick=function(){
  var dark=root.getAttribute('data-theme')?root.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+ root.classList.add('tt');setTimeout(function(){root.classList.remove('tt')},700);
  root.setAttribute('data-theme',dark?'light':'dark');
 };
 </script>
