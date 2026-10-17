@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tejas Chauhan · Backend Software Engineer</title>
+<meta name="description" content="Backend engineer building payment systems, data pipelines and AI services. Based in Vadodara, India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3fc;--surface:#dde7f9;--text:#0a1433;--muted:#4a5f8f;--line:#bccbea;--accent:#1c3fae;--accent2:#1d5fc4;--chip:#cfdcf7;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#050b1f;--surface:#0c1a3d;--text:#eaf1ff;--muted:#8fa6d6;--line:#1d3270;--accent:#4f7dff;--accent2:#8fb8ff;--chip:#12275c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#050b1f;--surface:#0c1a3d;--text:#eaf1ff;--muted:#8fa6d6;--line:#1d3270;--accent:#4f7dff;--accent2:#8fb8ff;--chip:#12275c;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Outfit,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.6}
+h1,h2,h3{font-family:"Chakra Petch","Arial Narrow",Impact,sans-serif;text-transform:uppercase;line-height:1.05;margin:0}
+a{color:var(--accent2)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:15px}
+nav .links{display:flex;gap:20px;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none}nav a:hover{color:var(--text)}
+#theme{background:none;border:1px solid var(--line);color:var(--text);border-radius:999px;padding:4px 12px;font:inherit;font-size:14px;cursor:pointer}
+.hero{padding:72px 0 56px}
+.hero p.role{color:var(--muted);margin:0 0 12px;letter-spacing:.04em}
+.hero h1{font-size:clamp(56px,14vw,128px);letter-spacing:.01em}
+.hero .tag{font-size:clamp(20px,3vw,26px);max-width:620px;margin:28px 0;font-weight:300}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:11px 22px;border-radius:8px;border:1px solid var(--accent);color:var(--text);text-decoration:none;font-weight:500}
+.btn.main{background:var(--accent);color:var(--bg)}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(30px,5vw,44px);margin-bottom:28px}
+h3{font-size:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px}
+.grid p{margin:6px 0 0;color:var(--muted)}
+.job{padding:0 0 32px}
+.job .when{color:var(--muted);font-size:15px;margin:0 0 4px}
+.job h3 span{display:block;font-family:Outfit,sans-serif;font-size:17px;font-weight:500;color:var(--accent2);text-transform:none;margin-top:6px}
+ul{padding-left:20px;margin:12px 0 0}li{margin:6px 0}
+.proj{padding:36px 0;border-top:1px solid var(--line)}
+.proj:first-of-type{border-top:0;padding-top:0}
+.proj h3{font-size:clamp(22px,4vw,30px)}
+.proj .stack{color:var(--muted);margin:10px 0 18px;font-size:15px}
+.flow{display:flex;flex-direction:column;gap:0;max-width:440px;margin:18px 0}
+.flow div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 16px;text-align:center;position:relative;font-weight:500}
+.flow div small{display:block;color:var(--muted);font-weight:300;font-size:14px}
+.flow div.hl{background:var(--chip);border-color:var(--accent)}
+.flow div+div{margin-top:18px}
+.flow div+div::before{content:"";position:absolute;left:50%;top:-18px;height:18px;border-left:2px solid var(--line)}
+.flow.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:none}
+.flow.split div+div{margin-top:0}.flow.split div+div::before{display:none}
+.flow .full{grid-column:1/-1}
+.repo{display:inline-block;margin-top:8px}
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.chips h3{font-size:16px;color:var(--muted);margin-bottom:6px}
+.chips p{margin:0}
+footer{padding:48px 0 64px;border-top:1px solid var(--line);color:var(--muted)}
+footer a{margin-right:18px}
+@media (max-width:560px){.flow.split{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#toolbox">Toolbox</a><a href="#contact">Contact</a></div>
+  <button id="theme" type="button" aria-label="Switch colour theme">Theme</button>
+</nav>
+
+<header class="hero">
+  <p class="role">Software engineer · Vadodara, India</p>
+  <h1>Tejas<br>Chauhan</h1>
+  <p class="tag">Building reliable backend systems: payments, data pipelines, and AI services.</p>
+  <div class="btns">
+    <a class="btn main" href="#projects">See my projects</a>
+    <a class="btn" href="mailto:chauhantejas18@gmail.com">Email me</a>
+  </div>
+</header>
+
+<section id="about">
+  <h2>From payment switches to AI-driven backends</h2>
+  <p style="max-width:640px;margin-top:0">Production experience in ISO 8583 payment switching (Java) and a low-latency Go gateway, plus Airflow data pipelines, now building RAG systems with LangChain and pgvector.</p>
+  <div class="grid" style="margin-top:32px">
+    <div><h3>Payment systems</h3><p>ISO 8583 payment switching in Java. A low-latency Go gateway.</p></div>
+    <div><h3>Data pipelines</h3><p>Airflow data pipelines.</p></div>
+    <div><h3>AI-driven backends</h3><p>RAG systems with LangChain and pgvector.</p></div>
+    <div><h3>Distributed patterns</h3><p>Saga, CQRS, event-driven architecture. Reliable, observable services on AWS.</p></div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Where I’ve shipped</h2>
+  <div class="job">
+    <p class="when">Oct 2025 – present</p>
+    <h3>Software Engineer<span>Tntra Ecosystem AI-First</span></h3>
+    <ul>
+      <li>Built a Go ISO 8583 TCP gateway with persistent connections, pooling, and concurrency control.</li>
+      <li>Contributed to a Java/Spring ISO 8583 payment switch: message pipelines and adapters.</li>
+      <li>Debugged transaction flows; added Prometheus metrics, structured logging, and unit tests.</li>
+    </ul>
+  </div>
+  <div class="job">
+    <p class="when">Jan – May 2025</p>
+    <h3>Data Engineer Intern<span>InfoDesk</span></h3>
+    <ul>
+      <li>Designed and deployed Airflow and Python ETL pipelines.</li>
+      <li>Improved monitoring and error handling; built Python ingestion APIs.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Selected projects</h2>
+  <p style="margin-top:-8px;color:var(--muted)">Four backend-first builds, each with an architecture diagram.</p>
+  <div id="projList"></div>
+</section>
+
+<section id="toolbox">
+  <h2>Toolbox</h2>
+  <div class="chips">
+    <div><h3>Languages</h3><p>Java, Python, Go</p></div>
+    <div><h3>Frameworks</h3><p>Spring (Integration, Security), Gin, FastAPI</p></div>
+    <div><h3>Cloud and infra</h3><p>AWS, Docker, GitHub Actions, microservices</p></div>
+    <div><h3>Data</h3><p>MongoDB, MySQL, PostgreSQL, OpenSearch</p></div>
+    <div><h3>Tooling</h3><p>Airflow, Temporal, Ansible, Tomcat</p></div>
+    <div><h3>Testing</h3><p>JUnit, Pytest</p></div>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education and credentials</h2>
+  <div class="grid">
+    <div><h3>MCA</h3><p>Nirma University, Ahmedabad<br>2023–2025</p></div>
+    <div><h3>BCA</h3><p>The Maharaja Sayajirao University of Baroda<br>2019–2022</p></div>
+  </div>
+  <ul style="margin-top:28px">
+    <li>AWS Academy Graduate, Cloud Foundations (2022)</li>
+    <li>AWS Certified Developer – Associate (in progress)</li>
+    <li>Volunteer, Art of Living Foundation: Happiness Program graduate</li>
+  </ul>
+</section>
+
+<footer id="contact">
+  <h2>Get in touch</h2>
+  <p><a href="mailto:chauhantejas18@gmail.com">chauhantejas18@gmail.com</a> · <a href="tel:+917490857974" style="margin:0">+91 7490857974</a></p>
+  <p><a href="https://github.com/tejas297" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/tejas-chauhan-225b5b186" rel="noopener">LinkedIn</a></p>
+</footer>
+</div>
+
+<script>
+// Edit the repo field of each project to its GitHub URL.
+var projects=[
+{t:"A Go gateway that keeps payment connections alive",s:"Go, moov-io ISO 8583, TCP, Prometheus, Zerolog, Cleanenv, Testify",
+ flow:[["Client TCP connections"],["Connection pool","Persistent connections · concurrency control",1],["ISO 8583 pipeline","Raw TCP payloads → structured messages"],["Upstream"]],
+ b:["Persistent connections, pooling, concurrency control, graceful shutdown.","Pipeline turning raw TCP payloads into structured ISO 8583 messages.","Prometheus metrics and structured logging."],repo:""},
+{t:"A Java switch that routes card transactions securely",s:"Java 21, Spring Boot, Spring Integration, jPOS, TCP, Maven, JUnit",
+ flow:[["Inbound adapter","Spring Integration TCP"],["Message pipeline","ISO 8583 payment switching",1],["Outbound adapter","Spring Integration TCP"]],
+ b:["Inbound and outbound adapters and message pipelines over Spring Integration TCP.","Debugged transaction flows and optimized pipelines for reliability.","Unit tests for adapters."],repo:""},
+{t:"An HR assistant grounded in company documents",s:"Python, LangChain, OpenAI API, FastAPI, pgvector, PyMuPDF, SQLAlchemy",
+ flow:[["HR documents"],["Embeddings in pgvector","",1],["Retrieval","Multi-turn queries · prompt templates"],["LLM answer","Policies · leave · benefits"]],
+ b:["Natural-language answers on policies, leave, and benefits.","RAG over HR documents to reduce hallucinations.","Prompt templates and flow for multi-turn queries."],repo:""},
+{t:"A cloud-native microservices platform on AWS",s:"Java 21, Spring Boot, Spring Security, gRPC, Kafka (AWS MSK), PostgreSQL, ECS Fargate, AWS CDK",
+ flow:[["Spring Cloud Gateway","",1,"full"],["Patient · Billing · Authentication · Analytics","Services on ECS Fargate, gRPC for synchronous calls",0,"full"],["Kafka (AWS MSK)","Event-driven processing",1],["PostgreSQL","",1]],split:1,
+ b:["Patient, Billing, Authentication, and Analytics services.","gRPC for sync calls, Kafka for event-driven processing.","JWT auth service and Spring Cloud Gateway routing.","Infrastructure provisioned with CDK."],repo:""}
+];
+var out=projects.map(function(p){
+ var f=p.flow.map(function(n){return '<div class="'+(n[2]?'hl ':'')+(n[3]||'')+'">'+n[0]+(n[1]?'<small>'+n[1]+'</small>':'')+'</div>'}).join('');
+ var link=p.repo?'<a class="repo" href="'+p.repo+'" rel="noopener">View repository</a>':'<a class="repo" href="https://github.com/tejas297" rel="noopener">More on GitHub</a>';
+ return '<article class="proj"><h3>'+p.t+'</h3><p class="stack">'+p.s+'</p><div class="flow'+(p.split?' split':'')+'">'+f+'</div><ul>'+p.b.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>'+link+'</article>';
+}).join('');
+document.getElementById('projList').innerHTML=out;
+var root=document.documentElement;
+document.getElementById('theme').onclick=function(){
+ var dark=root.getAttribute('data-theme')?root.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+ root.setAttribute('data-theme',dark?'light':'dark');
+};
+</script>
+</body>
+</html>
